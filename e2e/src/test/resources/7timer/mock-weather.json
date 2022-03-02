@@ -1,0 +1,21 @@
+[
+  {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/civillight.php"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "{\n  \"product\": \"civillight\",\n  \"init\": \"2021022306\",\n  \"dataseries\": [\n    {\n      \"date\": 20210223,\n      \"weather\": \"lightrain\",\n      \"temp2m\": {\n        \"max\": 28,\n        \"min\": 27\n      },\n      \"wind10m_max\": 3\n    },\n    {\n      \"date\": 20210224,\n      \"weather\": \"cloudy\",\n      \"temp2m\": {\n        \"max\": 27,\n        \"min\": 27\n      },\n      \"wind10m_max\": 3\n    },\n    {\n      \"date\": 20210225,\n      \"weather\": \"rain\",\n      \"temp2m\": {\n        \"max\": 27,\n        \"min\": 27\n      },\n      \"wind10m_max\": 3\n    }\n  ]\n}\n"
+    }
+  }, {
+    "httpRequest": {
+      "method": "GET",
+      "path": "/civil.php"
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "body": "{\n  \"product\": \"civil\" ,\n  \"init\": \"2022020712\" ,\n  \"dataseries\": [\n    {\n      \"timepoint\": 3 ,\n      \"cloudcover\": 8 ,\n      \"lifted_index\": 6 ,\n      \"prec_type\": \"none\" ,\n      \"prec_amount\": 0 ,\n      \"temp2m\": 32 ,\n      \"rh2m\": \"24%\" ,\n      \"wind10m\": {\n        \"direction\": \"NE\" ,\n        \"speed\": 3\n      } ,\n      \"weather\": \"cloudyday\"\n    } ,\n    {\n      \"timepoint\": 6 ,\n      \"cloudcover\": 5 ,\n      \"lifted_index\": 10 ,\n      \"prec_type\": \"none\" ,\n      \"prec_amount\": 0 ,\n      \"temp2m\": 28 ,\n      \"rh2m\": \"29%\" ,\n      \"wind10m\": {\n        \"direction\": \"E\" ,\n        \"speed\": 3\n      } ,\n      \"weather\": \"pcloudynight\"\n    }\n  ]\n}"
+    }
+  }
+]
