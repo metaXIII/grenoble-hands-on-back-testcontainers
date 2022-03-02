@@ -12,7 +12,7 @@ import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.get
 import org.springframework.test.web.servlet.post
 import org.springframework.transaction.annotation.Transactional
-import org.testcontainers.containers.GenericContainer
+import org.testcontainers.containers.MySQLContainer
 import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 
@@ -28,12 +28,10 @@ internal class CitiesControllerTest {
     companion object {
 
         @Container
-        val mysql = GenericContainer("mysql:8")
-            .withEnv("MYSQL_RANDOM_ROOT_PASSWORD", "true")
-            .withEnv("MYSQL_USER", "zenika")
-            .withEnv("MYSQL_PASSWORD", "zenika-password")
-            .withEnv("MYSQL_DATABASE", "zenika-weather")
-            .withExposedPorts(3306)
+        val mysql = MySQLContainer("mysql:8")
+            .withUsername("zenika")
+            .withPassword("zenika-password")
+            .withDatabaseName("zenika-weather")
 
         @JvmStatic
         @DynamicPropertySource
