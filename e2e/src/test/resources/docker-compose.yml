@@ -14,8 +14,6 @@ services:
       retries: 10
   7timer:
     image: 7timer:0.0.1-SNAPSHOT
-    ports:
-      - "1080:1080"
   api:
     image: zenika-weather-back:0.0.1-SNAPSHOT
     environment:
@@ -23,8 +21,6 @@ services:
       - SPRING_DATASOURCE_USERNAME=zenika
       - SPRING_DATASOURCE_PASSWORD=zenika-password
       - WEATHER_URL=http://7timer:1080
-    ports:
-      - "8080:8080"
     depends_on:
       db:
         condition: service_healthy
@@ -37,8 +33,6 @@ services:
     image: zenika-weather-front:0.0.1-SNAPSHOT
     environment:
       - API_URL=http://api:8080
-    ports:
-      - "80:80"
     depends_on:
       api:
         condition: service_healthy
