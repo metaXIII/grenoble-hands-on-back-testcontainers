@@ -1,11 +1,14 @@
 
-import io.github.bonigarcia.wdm.WebDriverManager
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
+import org.junit.runner.Description
+import org.junit.runners.model.Statement
 import org.openqa.selenium.By
 import org.openqa.selenium.WebDriver
-import org.openqa.selenium.chrome.ChromeDriver
+import org.openqa.selenium.chrome.ChromeOptions
+import org.testcontainers.containers.BrowserWebDriverContainer
 import org.testcontainers.containers.DockerComposeContainer
+import org.testcontainers.containers.Network
 import java.io.File
 import java.util.concurrent.TimeUnit
 
@@ -15,16 +18,19 @@ class InfrastructureTest {
     val containers = DockerComposeContainer(File(javaClass.getResource("docker-compose.yml").file))
       .withExposedService("front_1", 80)
 
+    val chrome = BrowserWebDriverContainer()
+      .withCapabilities(ChromeOptions())
+      .withNetwork(ContainersNetwork())
+
     val rootUrl: String
     val driver: WebDriver
 
     init {
-      WebDriverManager.chromedriver().setup()
-
       containers.start()
+      chrome.start()
 
-      rootUrl  = "http://localhost:${containers.getServicePort("front_1", 80)}"
-      driver = ChromeDriver().apply {
+      rootUrl = "http://front"
+      driver = chrome.webDriver.apply {
         manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS)
       }
     }
@@ -44,4 +50,18 @@ class InfrastructureTest {
     val weather = driver.findElements(By.cssSelector(".section table tr")).map { it.text }
     assertThat(weather).hasSizeGreaterThan(0)
   }
+}
+
+class ContainersNetwork : Network {
+  override fun close() {
+  }
+
+  override fun apply(p0: Statement?, p1: Description?): Statement? {
+    return null;
+  }
+
+  override fun getId(): String {
+    return "weather"
+  }
+
 }

@@ -95,6 +95,12 @@
         <artifactId>mysql-connector-java</artifactId>
         <version>8.0.27</version>
       </dependency>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>selenium</artifactId>
+        <version>1.16.3</version>
+        <scope>test</scope>
+      </dependency>
 
   </dependencies>
 
