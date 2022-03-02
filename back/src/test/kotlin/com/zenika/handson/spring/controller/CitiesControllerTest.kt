@@ -6,14 +6,10 @@ import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureDataJpa
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest
 import org.springframework.http.MediaType
 import org.springframework.security.test.context.support.WithMockUser
-import org.springframework.test.context.DynamicPropertyRegistry
-import org.springframework.test.context.DynamicPropertySource
 import org.springframework.test.web.servlet.MockMvc
 import org.springframework.test.web.servlet.get
 import org.springframework.test.web.servlet.post
 import org.springframework.transaction.annotation.Transactional
-import org.testcontainers.containers.MySQLContainer
-import org.testcontainers.junit.jupiter.Container
 import org.testcontainers.junit.jupiter.Testcontainers
 
 @WebMvcTest(controllers = [CitiesController::class])
@@ -24,23 +20,6 @@ internal class CitiesControllerTest {
 
     @Autowired
     private lateinit var mockMvc: MockMvc
-
-    companion object {
-
-        @Container
-        val mysql = MySQLContainer("mysql:8")
-            .withUsername("zenika")
-            .withPassword("zenika-password")
-            .withDatabaseName("zenika-weather")
-
-        @JvmStatic
-        @DynamicPropertySource
-        fun setupProps(dynamicPropertyRegistry: DynamicPropertyRegistry) {
-            dynamicPropertyRegistry.add("spring.datasource.url") {
-                "jdbc:mysql://localhost:${mysql.firstMappedPort}/zenika-weather"
-            }
-        }
-    }
 
     @Test
     fun `get all cities return 200`() {
