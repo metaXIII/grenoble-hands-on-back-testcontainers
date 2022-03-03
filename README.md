@@ -1,6 +1,6 @@
 # Docker pour vos tests d’intégration : À la découverte de Testcontainers 🐳
 
-[Link to slides](https://ps.w.org/under-construction-page/assets/screenshot-2.png?rev=1840052)
+[Link to slides](https://docs.google.com/presentation/d/e/2PACX-1vQWpi8rGJx5soMg4l4IiDHSRaqQEW2A9yQuAHeOztTwQ75hNSg1k46lv_2e65QsA6AORUcRNeASdKgm/pub?start=false&loop=false&delayms=3000)
 
 [![TestContainers](https://d33wubrfki0l68.cloudfront.net/a661dbbe55be3e9cb77889f24835a44c6daf53c2/ce0aa/logo.png)](https://www.testcontainers.org/)
 
@@ -11,7 +11,6 @@ You develop a weather app, proposing simple use cases:
 
 ## Prerequisites
 
----
 (Estimate time : 10 minutes)
 
 Make sure you have the following prerequisites installed on your machine:
@@ -38,7 +37,6 @@ You can check everything's going well with the usage section above.
 
 ## Usage
 
----
 (Estimate time : 5 minutes)
 
 ### Launch front
@@ -85,8 +83,6 @@ docker stop weather-db
 
 ## Workshop! 🚀️
 
----
-
 ### Integration test
 (Estimate time : 30 minutes)
 
@@ -109,11 +105,9 @@ Step 4: Migrate functional test to use docker compose.
 
 Step 5 (Bonus): Migrate functional test to use web driver container.
 
----
 
 Workshop's done: **Congratulations!** 🏆️🎉
 
----
 **🎓 Solutions**
 
 Need help? 
@@ -155,8 +149,6 @@ Every improvement is welcome!
 
 ## Technologies
 
----
-
 ### Languages
 
 * Typescript
@@ -170,7 +162,6 @@ Every improvement is welcome!
 
 ## Other Hands-on
 
----
 
 ### Front
 
