@@ -14,7 +14,7 @@
     <kotlin.version>1.6.10</kotlin.version>
     <junit-jupiter.version>5.8.2</junit-jupiter.version>
     <logback.version>1.2.6</logback.version>
-    <log4j.version>2.14.1</log4j.version>
+    <log4j.version>2.18.0</log4j.version>
     <selenium.version>3.141.59</selenium.version>
     <assertj-core.version>3.19.0</assertj-core.version>
     <webdrivermanager.version>5.0.3</webdrivermanager.version>
