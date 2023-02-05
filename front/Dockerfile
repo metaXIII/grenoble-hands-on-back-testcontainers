@@ -7,7 +7,7 @@ COPY . /app
 RUN npm run build
 
 # Make final image
-FROM nginx:latest AS ngi
+FROM nginx:1.23 AS ngi
 # Copying compiled code and nginx config to different folder
 # NOTE: This path may change according to your project's output folder
 ENV API_URL="http://localhost:8080"
