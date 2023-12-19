@@ -23,7 +23,7 @@
     "bulma": "^0.9.1",
     "leaflet": "^1.7.1",
     "rxjs": "~6.6.0",
-    "tslib": "^2.0.0",
+    "tslib": "^2.4.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
